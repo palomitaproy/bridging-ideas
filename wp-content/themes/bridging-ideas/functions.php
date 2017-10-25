@@ -116,6 +116,37 @@ add_action( 'widgets_init', 'bridging_ideas_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
+
+ function wps_scripts() {
+     /* Theme CSS */
+     wp_enqueue_style(
+         'wps-style',
+         get_stylesheet_uri(),
+         array( 'bootstrap' ),
+         '1.0.0'
+     );
+
+     /* Bootstrap CSS */
+     wp_enqueue_style(
+         'bootstrap',
+         get_template_directory_uri() . '/css/bootstrap.min.css',
+         array(),
+         '3.3.7'
+     );
+
+     /* Bootstrap JS */
+     wp_enqueue_script(
+         'bootstrap',
+         get_template_directory_uri() . '/js/bootstrap.min.js',
+         array( 'jquery' ),
+         '3.3.7',
+         true
+     );
+ }
+
+ add_action( 'wp_enqueue_scripts', 'wps_scripts' );
+
+
 function bridging_ideas_scripts() {
 	wp_enqueue_style( 'bridging-ideas-style', get_stylesheet_uri() );
 
@@ -155,4 +186,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
