@@ -26,42 +26,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bridging-ideas' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-wrapper">
 
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">Cover</h3>
-              <nav class="nav nav-masthead">
-                <a class="nav-link active" href="#">Home</a>
-                <a class="nav-link" href="#">Features</a>
-                <a class="nav-link" href="#">Contact</a>
-              </nav>
-            </div>
-          </div>
-
-          <div class="inner cover">
-            <h1 class="cover-heading">Cover your page.</h1>
-            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-            <p class="lead">
-              <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
-            </p>
-          </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Cover template for <a href="https://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
@@ -80,12 +45,21 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'bridging-ideas' ); ?></button>
+
 			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				) );
+				wp_nav_menu(array( 'menu' => '',
+				 'container' => 'div',
+				 'container_class' => '',
+				 'container_id' => '',
+				 'menu_class' => 'menu nav',
+				 'menu_id' => '',
+    		'echo' => true,
+				'fallback_cb' => 'wp_page_menu',
+				 'before' => '', 'after' => '',
+				 'link_before' => '',
+				 'link_after' => '',
+				 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>', 'item_spacing' => 'preserve',
+    		'depth' => 0, 'walker' => '', 'theme_location' => '' ));
 			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
