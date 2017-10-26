@@ -135,6 +135,13 @@ add_action( 'widgets_init', 'bridging_ideas_widgets_init' );
      );
 
      /* Bootstrap JS */
+		 wp_enqueue_script(
+				'bootstrap',
+				get_template_directory_uri() . '/js/popper.min.js',
+				array( 'jquery' ),
+				'3.3.7',
+				true
+		);
      wp_enqueue_script(
          'bootstrap',
          get_template_directory_uri() . '/js/bootstrap.min.js',
@@ -142,6 +149,7 @@ add_action( 'widgets_init', 'bridging_ideas_widgets_init' );
          '3.3.7',
          true
      );
+
  }
 
  add_action( 'wp_enqueue_scripts', 'wps_scripts' );
