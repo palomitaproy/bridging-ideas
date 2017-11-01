@@ -21,7 +21,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> data-target="#navbar-example2" data-spy="scroll" >
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bridging-ideas' ); ?></a>
 
@@ -43,25 +43,32 @@
 			<?php
 			endif; ?>
 		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-
+		<nav class="nav navbar navbar-expand-lg navbar-light bg-white fixed-top" id="navbar-example2">
+			<div class="container">
+  <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' );the_custom_logo(); ?></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+		<div class="collapse navbar-collapse" id="navbarNav">
 			<?php
-				wp_nav_menu(array( 'menu' => '',
-				 'container' => 'div',
-				 'container_class' => '',
-				 'container_id' => '',
-				 'menu_class' => 'menu nav',
-				 'menu_id' => '',
-    		'echo' => true,
+			$defaults = array(
+				'menu' => '',
+				'menu_class' => 'menu navbar-nav',
+				'menu_id' => '',
+		    'echo' => true,
 				'fallback_cb' => 'wp_page_menu',
-				 'before' => '', 'after' => '',
-				 'link_before' => '',
-				 'link_after' => '',
-				 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>', 'item_spacing' => 'preserve',
-    		'depth' => 0, 'walker' => '', 'theme_location' => '' ));
+				'items_wrap' => '<ul  class="%2$s">%3$s</ul>',
+				'item_spacing' => 'preserve',
+		    'depth' => 0,
+				'walker' => '',
+				'theme_location' => '' );
+				wp_nav_menu($defaults);
 			?>
-		</nav><!-- #site-navigation -->
+
+		</div>
+ </div>
+</nav>
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
