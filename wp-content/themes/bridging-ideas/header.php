@@ -23,7 +23,7 @@
 
 <body <?php body_class(); ?> data-target="#navbar-example2" data-spy="scroll" >
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bridging-ideas' ); ?></a>
+	<!--<a class="skip-link screen-reader-text" href="#content">--><?php //esc_html_e( 'Skip to content', 'bridging-ideas' ); ?><!--</a>-->
 
 	<header id="masthead" class="site-header">
 

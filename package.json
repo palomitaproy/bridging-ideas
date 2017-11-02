@@ -6,7 +6,7 @@
   "scripts": {
     "start": "concurrently \"npm run docker\" \"npm run gulp\" -n \"DOCKER,GULP\" --prefix name -c \"blue.bold,magenta.bold\"",
     "docker": "sudo docker-compose up",
-    "gulp": "gulp"
+    "gulp": "7"
   },
   "devDependencies": {
     "concurrently": "^3.5.0",
